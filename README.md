@@ -1,7 +1,6 @@
 # [Thirty Dollar Website](https://thirtydollar.website/) music file to moai file converter
 
 ## Usage
-##
 
 Usage: `python moai.py <input_file> [OPTIONS]`
  - [OPTIONS]:
@@ -11,7 +10,6 @@ Usage: `python moai.py <input_file> [OPTIONS]`
 The program reads the input file and write a `.moai` file to the user-specified output which can be loaded on the [Thirty Dollar Website](https://thirtydollar.website/).
 
 ## Input Files
-##
 
 The input file is a simple text file that specifies the properties and notes of the clip.
 The first line specifies the playback speed of the clip. (For reference, the site's default is 300).
@@ -37,3 +35,17 @@ Anatomy of the input file:
 <instrument2 (str)> <NOTE_SEQ2 (str_list)>
 ...
 ```
+
+## The Y
+
+Y this exist? Y when I do this when I can just use the site? 
+
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/33503562/202020526-41430387-da08-4506-8a57-1c1b36476271.gif" style="height:500px;" />
+  <img src="https://user-images.githubusercontent.com/33503562/202020633-665a070a-e4c3-4cc8-8134-d186093d7d29.gif" />
+</p>
+
+
+WELL because I want to do **polyphonic music** ok??? and polyphonic music very very not easy on the site ***understand????***
+

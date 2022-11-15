@@ -38,7 +38,7 @@ Anatomy of the input file:
 
 ## The Y
 
-Y this exist? Y when I do this when I can just use the site? 
+Y this exist? Y I do this when I can just use the site? 
 
 
 <p align="center">
@@ -47,5 +47,5 @@ Y this exist? Y when I do this when I can just use the site?
 </p>
 
 
-WELL because I want to do **polyphonic music** ok??? and polyphonic music very very not easy on the site ***understand????***
+WELL because I want to do **polyphony music** ok??? and polyphony music very very not easy on the site ***understand????***
 

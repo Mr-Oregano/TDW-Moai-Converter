@@ -18,7 +18,6 @@ The next lines represent each track. Each track is a space separated list specif
   - A space separated list of notes and their pitches or silence. 
   - A note can either be:
     - The name of a valid note in music theory (e.g. `A`, `A#`, `B`, etc.) followed by its pitch (e.g. `C4`, `D5`). `C4` is "middle C"
-    - An `H` in which case the default pitch for the particular instrument will be used (useful for drums or beats).
     - Or a `.` to indicate a "rest" or "silence" for that beat
         - Sharps can be specified with `#` and Flats can be specified with `-`, they both must be specified **after** the name of the note (e.g. `A#4`, `B-4`)
 

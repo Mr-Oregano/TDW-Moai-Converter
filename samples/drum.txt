@@ -1,4 +1,0 @@
-300
-adofaikick         H . . .   . . . .   . . H .   . . . .
-noteblock_snare    . . . .   H . . H   . H . .   H . . .
-noteblock_click    H H H H   H H H H   H H H H   H H H H

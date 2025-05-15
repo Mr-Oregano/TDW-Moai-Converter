@@ -25,7 +25,7 @@ KEYS_TO_PITCH = {
     'C': -6,
 }
 
-def parse_note_token(token, sound):
+def parse_note_token(token, sound, transpose = 0):
     if token == '.':
         return SILENCE
 
@@ -43,8 +43,8 @@ def parse_note_token(token, sound):
         print(f'Note missing pitch \'{token}\'. Failed to parse.', file=sys.stderr)
         quit()
 
-    pitch = relative_pitch + octave * 12
-    return f"{sound}@{pitch}"
+    pitch = relative_pitch + octave * 12 + transpose
+    return f'{sound}@{pitch}'
 
 def get_input_file_name():
     it = iter(range(1, len(sys.argv)))
@@ -76,6 +76,7 @@ def main():
     speed = 300
     voices = []
     sounds = []
+    transpose = []
 
     with open(input_file_name, 'r') as in_file:
         # Load Speed
@@ -84,7 +85,9 @@ def main():
         # Load Notes
         for line in in_file:
             track = line.strip().split()
-            sounds.append(track[0])
+            sound = track[0].split('+')
+            sounds.append(sound[0])
+            transpose.append(int(sound[1]) if len(sound) > 1 else 0)
             voices.append(map(str.upper, track[1:]))
 
         assert len(voices) == len(sounds), f'Sounds ({len(sounds)}) and Voices ({len(voices)}) should be equal in length'
@@ -94,8 +97,16 @@ def main():
 
         for voices in zip(*voices):
             out_file.write('|')
-            chord = [ parse_note_token(v, sounds[i]) for i, v in enumerate(voices) ]
-            chord_str = f'|{COMBINE}|'.join(chord)
+            chord = [ parse_note_token(v, sounds[i], transpose[i]) for i, v in enumerate(voices) ]
+
+            # Optimization
+            chord = list(filter(lambda n: n != SILENCE, chord))
+
+            if len(chord) > 0:
+                chord_str = f'|{COMBINE}|'.join(chord)
+            else:
+                chord_str = SILENCE
+
             out_file.write(chord_str) 
 
 if __name__ == '__main__':
